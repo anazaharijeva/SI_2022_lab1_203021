@@ -1,5 +1,5 @@
 kiwi x5
-bananas x6
+bananas x20
 bread x7
 milk  x8
 oats x15
