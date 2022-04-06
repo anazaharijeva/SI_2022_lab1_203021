@@ -1,0 +1,263 @@
+Прва лабораториска вежба
+Ана Захаријева, 203021
+
+1. Името на мојот GitHub профил e https://github.com/аnazaharijeva
+2. Во settings гранката main ja преименував во master.
+3. При креирањето на репозиториумот го селектирав полето private и полето        за README фајлот.
+4. Најпрво започнав со клонирањето на нашиот компјутер со помош на следната наредба:
+$ git clone https://github.com/anazaharijeva/si_2022_lab1_203021 
+Со следната наредба влегуваме во локалниот репозиториум:
+$ cd si_2022_lab1_203021
+5.Како втор чекор ја додавам текстуалната датотека shopping_list и во неа додадов 5 производи,а потоа правам commit со дадената порака.
+   $ nano shopping_list.txt
+   $ git add shopping_list.txt
+   $ git commit –m “Add 5 items to the shopping list”
+6. За секој производ додавам количина а потоа им правам commit.
+   $ git commit –a –m “Add quantities to the items”
+7. Со овие две команди ги креираме новите две гранки.
+   $ git checkout –b branch1
+   $ git checkout –b branch2
+8. Досегашниот код е прикажан подоле:
+user@DESKTOP-DQTLB9G MINGW64 ~ (master)
+$ git clone https://github.com/anazaharijeva/SI_2022_lab1_203021.git
+Cloning into 'SI_2022_lab1_203021'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+user@DESKTOP-DQTLB9G MINGW64 ~ (master)
+$ cd SI_2022_lab1_203021
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ nano shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git add shopping_list.txt
+warning: LF will be replaced by CRLF in shopping_list.txt.
+The file will have its original line endings in your working directory
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git commit -a -m "Add 5 items to the shopping list"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'user@DESKTOP-DQTLB9G.(none)')
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git config --global user.email "ana.zaharijeva@students.finki.ukim.mk"
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ nano shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git commit -a -m "Add quantities to the items"
+warning: LF will be replaced by CRLF in shopping_list.txt.
+The file will have its original line endings in your working directory
+[master 7631fd5] Add quantities to the items
+ 1 file changed, 5 insertions(+)
+ create mode 100644 shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git checkout -b branch1
+Switched to a new branch 'branch1'
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch1)
+$ git checkout -b branch2
+Switched to a new branch 'branch2'
+9. Синхронизаијата се прави со помош на командата push, и ги  синхронизирам сите достапни гранки (master, branch1 и branch2).
+   $ git push origin master
+   $ git push origin branch1
+   $ git push origin branch2
+
+10. Се префрлам на гранката со реден број 1.
+   $ git checkout branch1
+11.Ја менувам количината на производот со реден број 5 и правам commit за          направената промена.
+   $ git commit –a –m “Change quantity of item #5”
+12.Се враќам на гранката мастер.
+   $ git checkout master
+13.Ја менувам количината на производот со реден број 2 и правам commit за направената промена.
+   $ git commit –a –m “Change quantity of item #2”
+14.Повторно правиме синхронизација за сите достапни гранки.
+   $ git origin master
+   $ git origin branch1
+   $ git origin branch2
+
+15.Се префрлам на гранката со реден број 2.
+   $ git checkout branch2
+16.Го менувам името на производот со реден број 4 и правам commit.
+   $ git commit –a –m “Modify item #4”
+17.Досегашниот код е прикажан подоле:
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/anazaharijeva/SI_2022_lab1_203021.git
+   ef29039..7631fd5  master -> master
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git push origin branch1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/anazaharijeva/SI_2022_lab1_203021/pull/new/branch1
+remote:
+To https://github.com/anazaharijeva/SI_2022_lab1_203021.git
+ * [new branch]      branch1 -> branch1
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git push origin branch2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/anazaharijeva/SI_2022_lab1_203021/pull/new/branch2
+remote:
+To https://github.com/anazaharijeva/SI_2022_lab1_203021.git
+ * [new branch]      branch2 -> branch2
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git checkout branch1
+Switched to branch 'branch1'
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch1)
+$ nano shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch1)
+$ git commit -a -m "Change quantity of item #5"
+warning: LF will be replaced by CRLF in shopping_list.txt.
+The file will have its original line endings in your working directory
+[branch1 794b1bd] Change quantity of item #5
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ nano shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git commit -a -m "Change quantity of item #2"
+[master f18c561] Change quantity of item #2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 361 bytes | 361.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/anazaharijeva/SI_2022_lab1_203021.git
+   7631fd5..f18c561  master -> master
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git push origin branch1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 355 bytes | 355.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/anazaharijeva/SI_2022_lab1_203021.git
+   7631fd5..794b1bd  branch1 -> branch1
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git push origin branch2
+Everything up-to-date
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git checkout branch2
+Switched to branch 'branch2'
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ nano shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git commit -a -m "Modify item #4"
+[branch2 e05ff8c] Modify item #4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ nano shopping_list.txt
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git commit -a -m "Modify item #4 and add item #6"
+[branch2 b09f802] Modify item #4 and add item #6
+ 1 file changed, 1 insertion(+)
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (branch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git commit -a -m "Merge branch1"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git merge branch1
+Auto-merging shopping_list.txt
+Merge made by the 'ort' strategy.
+ shopping_list.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git commit -a -m "Merge branch2"
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master)
+$ git merge branch2
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+user@DESKTOP-DQTLB9G MINGW64 ~/SI_2022_lab1_203021 (master|MERGING)
+$
+18.Вo шопинг листата додавам производ под реден број 6, и го менувам и последниот комит.
+   $ git commit –amend –a –m “Modify item #4 and add item #6”
+19.Досегашниот код е прикажан подоле:
+ -/- наведено во кодот погоре
+20.Се префрлам на гранката мастер и со помош на командата merge ја спојувам гранката со број 1.
+   $ git checkout master
+   $ git commit –a –m “Merge branch1”
+   $ git merge branch1	
+
+21.Кога ја спојувам и гранката со број 2, ми дава дека настанува конфликт, и за да го решиме конфликтот треба да избришеме еден од производите.
+   $ git commit –a –m “Merge branch2”
+   $ git merge branch2
+
+
+22.Во предпоследниот чекор го додавам мојот документ.
+   $ git add 203066.txt
+   $ git commit –m “Add docs”
+
+23.И на крај повторно се прави синхронизација на сите три гранки.
+   $git push origin master
+   $git push origin branch1
+   $git push origin branch2
+
+
