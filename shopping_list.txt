@@ -1,7 +1,6 @@
 kiwi x5
-bananas x20
+bananas x6
 bread x7
 milk  x8
-oranges 
-dragon fruit
+oats x15
 
